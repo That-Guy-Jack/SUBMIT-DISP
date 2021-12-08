@@ -11,10 +11,10 @@ app = Flask(__name__)
 
 def submit() :
     mylcd.lcd_clear()
-    mylcd.lcd_display_string("", 1)
-    mylcd.lcd_display_string("", 2)
-    mylcd.lcd_display_string("Submit Your message at:", 3)
-    mylcd.lcd_display_string("ThatGuyJack.co.uk/LCD/", 4)
+    mylcd.lcd_display_string("aaa", 1)
+    mylcd.lcd_display_string("aaa", 2)
+    mylcd.lcd_display_string("Send your message:", 3)
+    mylcd.lcd_display_string("ThatGuyJack.co.uk/L/", 4)
     sleep(1)
 
     
