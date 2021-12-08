@@ -30,8 +30,7 @@ def apiSubmit() :
     #message = request.args.get('message')
         message = request.form.get('message')
         return '''
-                  <h1>The language value is: {}</h1>
-                  <h1>The framework value is: {}</h1>'''.format(message)
+                  <h1>The message value is: {}</h1>'''.format(message)
     #submit()
     #return jsonify({})
 
