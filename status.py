@@ -6,7 +6,7 @@ from flask import Flask, jsonify, make_response, request, render_template, url_f
 from flask_reverse_proxy_fix.middleware import ReverseProxyPrefixFix
 
 app = Flask(__name__)
-app.config['REVERSE_PROXY_PATH'] = '/SM/'
+app.config['REVERSE_PROXY_PATH'] = '/SM'
 ReverseProxyPrefixFix(app)
 mylcd = i2c_lcd_driver.lcd()
 
