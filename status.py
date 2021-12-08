@@ -28,7 +28,7 @@ def switchClear() :
 @app.route('/api/submit', methods=['GET','POST'])
 def apiSubmit() :
     #message = request.args.get('message')
-   return '''<form method="POST"><div><label>Language: <input type="text" name="language"></label></div> <div><label>Framework: <input type="text" name="framework"></label>< div><input type="submit" value="Submit"></form>'''
+   return '''<form method="POST"><div><label>Message: <input type="text" name="message"></label>< div><input type="submit" value="Submit"></form>'''
     #submit()
     #return jsonify({})
 
