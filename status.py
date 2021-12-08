@@ -25,12 +25,12 @@ def switchClear() :
     sleep(1)
 
 # API submit
-@app.route('/api/submit')
+@app.route('/api/submit', methods=['GET','POST'])
 def apiSubmit() :
-    message = request.args.get('message')
-    return '''<h1>The language value is: {}</h1>'''.format(message)
-#    submit()
-#    return jsonify({})
+    #message = request.args.get('message')
+   return '''<form method="POST"><div><label>Language: <input type="text" name="language"></label></div> <div><label>Framework: <input type="text" name="framework"></label>< div><input type="submit" value="Submit"></form>'''
+    #submit()
+    #return jsonify({})
 
 # API clear
 @app.route('/api/clear', methods=['GET'])
