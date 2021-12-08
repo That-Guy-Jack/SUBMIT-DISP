@@ -14,7 +14,7 @@ def submit() :
     mylcd.lcd_display_string("aaa", 1)
     mylcd.lcd_display_string("aaa", 2)
     mylcd.lcd_display_string("Send your message:", 3)
-    mylcd.lcd_display_string("ThatGuyJack.co.uk/L/", 4)
+    mylcd.lcd_display_string("ThatGuyJack.co.uk/FF", 4)
     sleep(1)
 
     
