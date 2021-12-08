@@ -13,7 +13,7 @@ def submit(message) :
     mylcd.lcd_clear()
     mylcd.lcd_display_string(message, 1)
     mylcd.lcd_display_string("", 2)
-    mylcd.lcd_display_string("Send your message:", 3)
+    mylcd.lcd_display_string("Send your message:  ", 3)
     mylcd.lcd_display_string("ThatGuyJack.co.uk/FF", 4)
     sleep(1)
 
