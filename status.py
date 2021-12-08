@@ -9,10 +9,12 @@ mylcd = i2c_lcd_driver.lcd()
 app = Flask(__name__)
 #app.config['SERVER_NAME']= 'caroline.local'
 
-def switchTH() :
+def submit() :
     mylcd.lcd_clear()
-    mylcd.lcd_display_string("Welcome to", 1)
-    mylcd.lcd_display_string("Tom's Hardware!", 2)
+    mylcd.lcd_display_string("", 1)
+    mylcd.lcd_display_string("", 2)
+    mylcd.lcd_display_string("Submit Your message at:", 3)
+    mylcd.lcd_display_string("ThatGuyJack.co.uk/LCD/", 4)
     sleep(1)
 
     
@@ -25,7 +27,7 @@ def switchClear() :
 # API TH
 @app.route('/api/submit', methods=['GET'])
 def apiTH() :
-    switchTH()
+    submit()
     return jsonify({})
 
 # API clear
