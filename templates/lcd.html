@@ -15,15 +15,13 @@
 
 
 <script>
-
-var submit = "http://192.168.69.9:5000/api/submit";
 var clear = "http://192.168.69.9:5000/api/clear";
 
 function submitFunc() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", submit);
+  xmlhttp.open("POST", "/api/submit");
   document.getElementById("demo").innerHTML = "LCD Updated!";
-  xmlhttp.send();
+  xmlhttp.send("foo=bar&lorem=ipsum");
 }
 function clearFunc() {
   var xmlhttp = new XMLHttpRequest();
