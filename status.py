@@ -25,7 +25,7 @@ def switchClear() :
     sleep(1)
 
 # API TH
-@app.route('/api/submit', methods=['GET'])
+@app.route('/api/submit', methods=['POST'])
 def apiTH() :
     submit()
     return jsonify({})
@@ -48,4 +48,3 @@ def index():
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0')
-    #app.run(host='10.0.0.113')
