@@ -2,8 +2,12 @@
 
 import i2c_lcd_driver
 from time import sleep
-from flask import Flask, jsonify, make_response, request, render_template
-from datetime import datetime
+from flask import Flask, jsonify, make_response, request, render_template, url_for
+from flask_reverse_proxy_fix.middleware import ReverseProxyPrefixFix
+
+app = Flask(__name__)
+app.config['REVERSE_PROXY_PATH'] = '/SM/'
+ReverseProxyPrefixFix(app)
 mylcd = i2c_lcd_driver.lcd()
 
 app = Flask(__name__)
@@ -14,7 +18,7 @@ def submit(message) :
     mylcd.lcd_display_string(message, 1)
     mylcd.lcd_display_string("", 2)
     mylcd.lcd_display_string("Send your message:  ", 3)
-    mylcd.lcd_display_string("ThatGuyJack.co.uk/FF", 4)
+    mylcd.lcd_display_string("ThatGuyJack.co.uk/SM", 4)
     sleep(1)
 
     
@@ -31,9 +35,7 @@ def apiSubmit() :
         message = request.form.get('message')
         submit(message)
         return '''
-                  <h1>The message value is: {}</h1>'''.format(message)
-
-    #return jsonify({})
+                  <h1>Your Message has been sent!: {}</h1>'''.format(message)
 
 # API clear
 @app.route('/api/clear', methods=['GET'])
