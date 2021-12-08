@@ -9,7 +9,7 @@ mylcd = i2c_lcd_driver.lcd()
 app = Flask(__name__)
 #app.config['SERVER_NAME']= 'caroline.local'
 
-def submit() :
+def submit(message) :
     mylcd.lcd_clear()
     mylcd.lcd_display_string("aaa", 1)
     mylcd.lcd_display_string("aaa", 2)
@@ -31,7 +31,7 @@ def apiSubmit() :
         message = request.form.get('message')
         return '''
                   <h1>The message value is: {}</h1>'''.format(message)
-    #submit()
+    submit(message)
     #return jsonify({})
 
 # API clear
