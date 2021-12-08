@@ -29,9 +29,10 @@ def switchClear() :
 def apiSubmit() :
     #message = request.args.get('message')
         message = request.form.get('message')
+        submit(message)
         return '''
                   <h1>The message value is: {}</h1>'''.format(message)
-    submit(message)
+
     #return jsonify({})
 
 # API clear
