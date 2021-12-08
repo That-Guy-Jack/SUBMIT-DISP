@@ -3,7 +3,7 @@
 import i2c_lcd_driver
 from time import sleep
 from flask import Flask, jsonify, make_response, request, render_template, url_for
-from flask_reverse_proxy_fix.middleware import ReverseProxyPrefixFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
 app.config['REVERSE_PROXY_PATH'] = '/SM'
