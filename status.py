@@ -24,9 +24,11 @@ def switchClear() :
     mylcd.lcd_clear()
     sleep(1)
 
-# API TH
+# API submit
 @app.route('/api/submit', methods=['POST'])
-def apiTH() :
+def apiSubmit() :
+    language = request.args.get('message')
+    return '''<h1>The language value is: {}</h1>'''.format(language)
     submit()
     return jsonify({})
 

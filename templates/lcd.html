@@ -7,12 +7,8 @@
 <p>This page allows you to select the text of your LCD status indicator.</p>
 
 <p id="demo"></p>
+<input type="submit" value="Submit" style="padding:15px 20px;font-size: 17px;margin:3px" class="content-button">
 
-<form action="./api/submit" method="post"> 
-  <input type="text" name="Message"  placeholder="Enter Your Text Here!"></input>
-  <input type="submit" value="Submit">
-
-</form>
 <button onclick="submitFunc()">Submit</button>
 <br>
 <button onclick="clearFunc()">Clear Display</button>
@@ -26,7 +22,7 @@ function submitFunc() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("POST", "/api/submit");
   document.getElementById("demo").innerHTML = "LCD Updated!";
-  xmlhttp.send("foo=bar&lorem=ipsum");
+  xmlhttp.send("?", message());
 }
 function clearFunc() {
   var xmlhttp = new XMLHttpRequest();
