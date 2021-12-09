@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/bash 
 
 #it pull https://github.com/That-Guy-Jack/SUBMIT-DISP
 
