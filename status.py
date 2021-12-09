@@ -6,12 +6,13 @@ from flask import Flask, jsonify, make_response, request, render_template, url_f
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
-app.config['REVERSE_PROXY_PATH'] = '/SM'
-ReverseProxyPrefixFix(app)
+
 mylcd = i2c_lcd_driver.lcd()
 
 app = Flask(__name__)
 #app.config['SERVER_NAME']= 'caroline.local'
+app.config['REVERSE_PROXY_PATH'] = '/SM'
+#ReverseProxyPrefixFix(app)
 
 def submit(message) :
     mylcd.lcd_clear()
