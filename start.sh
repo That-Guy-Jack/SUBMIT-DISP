@@ -2,4 +2,4 @@
 
 #it pull https://github.com/That-Guy-Jack/SUBMIT-DISP
 
-gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
+pyhton gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
