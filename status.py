@@ -9,7 +9,7 @@ app = Flask(__name__)
 mylcd = i2c_lcd_driver.lcd()
 
 app = Flask(__name__)
-app.config['SERVER_NAME']= 'thatguyjack.co.uk/SM/'
+#app.config['SERVER_NAME']= 'thatguyjack.co.uk/SM/'
 
 def submit(message) :
     mylcd.lcd_clear()
