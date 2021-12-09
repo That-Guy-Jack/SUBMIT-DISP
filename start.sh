@@ -2,4 +2,4 @@
 
 git pull https://github.com/That-Guy-Jack/SUBMIT-DISP
 
-gunicorn --bind 0.0.0.0:5000 wsgi:app
+gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
