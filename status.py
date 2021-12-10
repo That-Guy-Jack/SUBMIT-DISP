@@ -3,6 +3,9 @@
 import i2c_lcd_driver
 from time import sleep
 from flask import Flask, jsonify, make_response, request, render_template
+from gpiozero import Buzzer
+from time import sleep
+buzzer = Buzzer(17)
 
 app = Flask(__name__)
 
@@ -17,6 +20,9 @@ def submit(message) :
     mylcd.lcd_display_string("", 2)
     mylcd.lcd_display_string("Send your message:  ", 3)
     mylcd.lcd_display_string("ThatGuyJack.co.uk/SM", 4)
+    buzzer.on()
+    sleep(1)
+    buzzer.off()
     sleep(1)
 
     
