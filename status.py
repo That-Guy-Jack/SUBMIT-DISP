@@ -6,7 +6,7 @@ from flask import Flask, jsonify, make_response, request, render_template
 from gpiozero import Buzzer
 from time import sleep
 buzzer = Buzzer(17)
-
+buzzer.off()
 app = Flask(__name__)
 
 mylcd = i2c_lcd_driver.lcd()
